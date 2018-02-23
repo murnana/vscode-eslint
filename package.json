@@ -5,6 +5,7 @@
 	"version": "1.4.7",
 	"author": "Microsoft Corporation",
 	"license": "MIT",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Microsoft/vscode-eslint.git"
@@ -22,7 +23,7 @@
 		"multi-root ready"
 	],
 	"engines": {
-		"vscode": "^1.16.0"
+		"vscode": "^1.20.1"
 	},
 	"activationEvents": [
 		"*"
@@ -206,7 +207,7 @@
 		"postinstall": "cd client && npm install && cd ../server && npm install && cd .."
 	},
 	"devDependencies": {
-		"typescript": "^2.7.1",
-		"@types/node": "^6.0.90"
+		"typescript": "^2.7.2",
+		"@types/node": "^9.4.6"
 	}
 }
