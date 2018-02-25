@@ -4,7 +4,7 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"sourceMap": true,
-		"outDir": "build",
+		"outDir": "./build",
 		"lib": [
 			"es6"
 		],
@@ -15,7 +15,7 @@
 	},
 	"include": [
 		"server/src",
-		"client/src",
+		"src/",
 	],
 	"exclude": [
 		"node_modules"

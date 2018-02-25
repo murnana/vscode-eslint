@@ -1,26 +1,23 @@
 {
 	"name": "vscode-eslint",
 	"displayName": "ESLint",
-	"description": "Integrates ESLint into VS Code.",
+	"description": "forked from vscode-eslint",
 	"version": "1.4.7",
-	"author": "Microsoft Corporation",
+	"author": "murnana",
 	"license": "MIT",
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-eslint.git"
+		"url": "https://github.com/murnana/vscode-eslint"
 	},
 	"bugs": {
-		"url": "https://github.com/Microsoft/vscode-eslint/issues"
+		"url": "https://github.com/murnana/vscode-eslint/issues"
 	},
-	"publisher": "dbaeumer",
+	"publisher": "murnana",
 	"icon": "eslint_icon.png",
 	"categories": [
 		"Languages",
 		"Linters"
-	],
-	"keywords": [
-		"multi-root ready"
 	],
 	"engines": {
 		"vscode": "^1.20.1"
@@ -28,7 +25,7 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./client/out/extension",
+	"main": "./build/src/client.js",
 	"contributes": {
 		"configuration": {
 			"type": "object",
@@ -198,16 +195,19 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
-		"compile:client": "tsc -p ./client/tsconfig.json",
-		"compile:server": "tsc -p ./server/tsconfig.json",
-		"watch:client": "tsc -w -p ./client/tsconfig.json",
-		"watch:server": "tsc -w -p ./server/tsconfig.json",
-		"compile": "npm run compile:client && npm run compile:server",
-		"postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+		"vscode:prepublish": "npm run update-vscode && npm run compile",
+		"compile": "tsc -p tsconfig.json",
+		"watch": "tsc -w -p tsconfig.json",
+		"postinstall": "cd ./server && npm install && cd .."
+	},
+	"dependencies": {
+		"vscode-uri": "^1.0.1",
+		"vscode-languageclient": "^4.0.0-next.11"
 	},
 	"devDependencies": {
+		"@types/node": "^9.4.6",
+		"gulp-util": "^3.0.8",
 		"typescript": "^2.7.2",
-		"@types/node": "^9.4.6"
+		"vscode": "^1.1.10"
 	}
 }
