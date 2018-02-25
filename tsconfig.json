@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "build",
+		"lib": [
+			"es6"
+		],
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
+	},
+	"include": [
+		"server/src",
+		"client/src",
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
