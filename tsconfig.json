@@ -3,8 +3,8 @@
 		"target": "es6",
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"sourceMap": true,
-		"outDir": "./build",
+		"sourceMap": false,
+		"outDir": "build",
 		"lib": [
 			"es6"
 		],
@@ -14,8 +14,7 @@
 		"noUnusedParameters": true
 	},
 	"include": [
-		"server/src",
-		"src/",
+		"src"
 	],
 	"exclude": [
 		"node_modules"

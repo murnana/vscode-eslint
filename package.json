@@ -25,7 +25,7 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./build/src/client.js",
+	"main": "./build/client.js",
 	"contributes": {
 		"configuration": {
 			"type": "object",
@@ -195,19 +195,20 @@
 		]
 	},
 	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
 		"vscode:prepublish": "npm run update-vscode && npm run compile",
 		"compile": "tsc -p tsconfig.json",
-		"watch": "tsc -w -p tsconfig.json",
-		"postinstall": "cd ./server && npm install && cd .."
+		"watch": "tsc -w -p tsconfig.json"
 	},
 	"dependencies": {
+		"vscode-languageclient": "^4.0.0-next.11",
+		"vscode-languageserver": "^4.0.0-next.5",
 		"vscode-uri": "^1.0.1",
-		"vscode-languageclient": "^4.0.0-next.11"
+		"vscode": "^1.1.10"
 	},
 	"devDependencies": {
 		"@types/node": "^9.4.6",
 		"gulp-util": "^3.0.8",
-		"typescript": "^2.7.2",
-		"vscode": "^1.1.10"
+		"typescript": "^2.7.2"
 	}
 }
